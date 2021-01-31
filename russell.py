@@ -716,7 +716,7 @@ def command_ip2hex(command, command_eol, params):
 		return hexchat.EAT_ALL
 
 	try:
-		socket.inet_aton(normalip)
+		socket.inet_aton(ip_address)
 	except socket.error:
 		print(f"\002**\002 {ip_address} is not a valid IPv4 address")
 		return hexchat.EAT_ALL
@@ -739,12 +739,12 @@ def command_ip2dec(command, command_eol, params):
 		return hexchat.EAT_ALL
 
 	try:
-		socket.inet_aton(normalip)
+		socket.inet_aton(ip_address)
 	except socket.error:
 		print(f"\002**\002 {ip_address} is not a valid IPv4 address")
 		return hexchat.EAT_ALL
 
-	packedip = socket.inet_aton(normalip)
+	packedip = socket.inet_aton(ip_address)
 	decip = struct.unpack("!L", packedip)[0]
 
 	print(f"\002**\002 IP '\002{ip_address}\002' resolves to decimal IP '\002{decip}\002'")
