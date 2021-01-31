@@ -2,4 +2,4 @@ datetime
 hashlib
 requests
 socket
-twitter
+python-twitter
